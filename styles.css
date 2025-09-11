@@ -1,0 +1,22 @@
+#songlink {
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    border: 2px solid black;
+    background-color: white;
+    overflow: auto;
+    line-height: 10px;
+    display: flex;
+}
+
+.playbut {
+    float: left;
+}
+
+#wrap {
+    width: 900px;
+    background-color: yellowgreen;
+    margin: auto;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
