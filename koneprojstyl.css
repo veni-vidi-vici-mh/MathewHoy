@@ -1,0 +1,97 @@
+    /* ensures all elements in header are displayed inline, gives font for the text, and gives margin of 20px for each element */
+    #headernavs {
+        display: inline;
+        font-family: Tahoma, Verdana, sans-serif;
+        margin: 20px;
+    }
+
+    /* removes underline from hyperlinks and gives them a color of "greenyellow" */
+    a {
+        text-decoration: none;
+        color: greenyellow;
+    }
+
+    /* gives the banner in the header a block display, centers it*/
+    #headerbanner {
+        display: block;
+        margin: auto;
+    }
+    
+    /* gives h1 a font of Century Gothic, also gives it a background color, padding in all directions of 3px,
+    a black solid border 2px thick, a top margin of 15px, and aligns the text to the center */
+    h1 {
+        font-family: 'Century Gothic';
+        background-color: greenyellow;
+        padding: 3px; 
+        border: 2px solid black;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    /* centers table */
+    table {
+        margin: auto;
+    }
+
+    /* gives these elements visible borders, centers text and gives a padding of 6px in all directions */ 
+    td, th {
+        border: 2px solid black;
+        text-align: center;
+        padding: 6px;
+    }
+
+    /* gives the header a turquoise background */
+    #mainnavs {
+        background-color: turquoise;
+    }
+
+    /* the elements included here stay on the right, have a top and bottom margin of 30px (both), and a turquoise color */
+    #righternavs {
+        float:right; 
+        margin-top: 30px; 
+        margin-bottom: 30px; 
+        background-color: turquoise;
+    }
+
+    /* centers the elements in the div with this id, and gives them a width of 1300px */
+    #realbody {
+        margin: auto; 
+        width: 1300px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* makes the share buttons stay on the left */
+    #sharebuts {
+        float: left;
+    }
+
+    /* gives footer a color, a height of 100px, and a padding of 20px */
+    #prefoot {
+        background-color: turquoise; 
+        height: 100px; 
+        padding: 20px;
+    }
+
+    /* makes all the elements in the footer in inline display and sets the font for the text */
+    footer {
+        display: inline;
+        font-family: Tahoma, Verdana, sans-serif;
+    }
+    
+    /* makes the contact info text stay on the right, and makes the text italic */
+       #continfo {
+        font-style: italic;
+        float: right;
+    }
+
+    /* makes title "References" bold and centered */
+    #revertti {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* makes an image stay on the left, gives it a right margin of 25 px */
+    #dihleft {
+        float: left;
+        margin-right: 25px;
+    }
