@@ -158,7 +158,7 @@
     }
 
     .facebook {
-        background: url('imgs/imgsprites_logos.png') no-repeat -98px -23px;
+        background: url('imgsprites_logos.png') no-repeat -98px -23px;
 	    background-size: 600px 300px;
 	    width: 52px;
 	    height: 52px;
@@ -166,7 +166,7 @@
     }
 
     .instagram {
-	    background: url('imgs/imgsprites_logos.png') no-repeat -168px -21px;
+	    background: url('imgsprites_logos.png') no-repeat -168px -21px;
 	    background-size: 600px 300px;
 	    width: 52px;
 	    height: 53px;
@@ -174,7 +174,7 @@
     }
 
     .twitter {
-	    background: url('imgs/imgsprites_logos.png') no-repeat -238px -21px;
+	    background: url('imgsprites_logos.png') no-repeat -238px -21px;
 	    background-size: 600px 300px;
 	    width: 52px;
 	    height: 53px;
@@ -182,7 +182,7 @@
     }
 
     .reddit {
-        background: url('imgs/imgsprites_logos.png') no-repeat -520px -21px;
+        background: url('imgsprites_logos.png') no-repeat -520px -21px;
 	    background-size: 600px 300px;
 	    width: 51px;
 	    height: 52px;
@@ -190,7 +190,7 @@
     }
 
     .facebook:hover {
-        background: url('imgs/imgsprites_logos.png') no-repeat -98px -84px;
+        background: url('imgsprites_logos.png') no-repeat -98px -84px;
 	    background-size: 600px 300px;
 	    width: 52px;
 	    height: 52px;
@@ -198,7 +198,7 @@
     }
 
     .instagram:hover {
-	    background: url('imgs/imgsprites_logos.png') no-repeat -168px -85px;
+	    background: url('imgsprites_logos.png') no-repeat -168px -85px;
 	    background-size: 600px 300px;
 	    width: 53px;
 	    height: 52px;
@@ -206,7 +206,7 @@
     }
 
     .twitter:hover {
-	    background: url('imgs/imgsprites_logos.png') no-repeat -237px -84px;
+	    background: url('imgsprites_logos.png') no-repeat -237px -84px;
 	    background-size: 600px 300px;
 	    width: 53px;
 	    height: 52px;
@@ -214,7 +214,7 @@
     }
 
     .reddit:hover {
-        background: url('imgs/imgsprites_logos.png') no-repeat -519px -84px;
+        background: url('imgsprites_logos.png') no-repeat -519px -84px;
 	    background-size: 600px 300px;
 	    width: 53px;
 	    height: 53px;
@@ -225,3 +225,4 @@
         float: right;
         margin-right: 70px;
     }
+
