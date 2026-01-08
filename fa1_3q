@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Welcome to my simple calculator page!</h2>
+  <p id="numbers"></p>
+  <p id="result"></p>
+<script>
+  // Step 1: Get two numbers using prompt
+    let num1 = Number(prompt("Enter the first number:"));
+    let num2 = Number(prompt("Enter the second number:"));
+  // Step 2: Perform operations
+    let sum = num1 + num2;
+    let dif = num1 - num2;
+    let quo = num1 / num2;
+  // Step 3: Display numbers and results using document.write()
+  // Display the numbers
+    document.write("Numbers: " + num1 + " and " + num2);
+    document.write("<br>");
+    
+  // Display 
+    document.write("Sum: " + sum);
+    document.write("<br>");
+  //
+    document.write("Difference: " + dif);
+    document.write("<br>");
+  //
+    document.write("Quotient: " + quo);
+    document.write("<br>");
+    
+  // Step 4: Display results using innerHTML
+  // Display the numbers
+    document.getElementById("numbers").innerHTML =
+   "Numbers: " + num1 + " and " + num2 + "<br>";
+  // Display the sum
+    document.getElementById("result").innerHTML =
+   "Sum: " + sum + "<br>";
+  // Display 
+    document.getElementById("result").innerHTML =
+   "Difference: " + dif + "<br>";
+  // Display
+    document.getElementById("result").innerHTML =
+   "Quotient: " + quo + "<br>";
+</script>
+</body>
+</html>
