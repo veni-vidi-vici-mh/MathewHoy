@@ -11,20 +11,13 @@
   // Step 2: Perform operations
     let sum = num1 + num2;
     let dif = num1 - num2;
-    let quo = num1 / num2;
+    let pro = num1 * num2;
   // Step 3: Display numbers and results using document.write()
-  // Display the numbers
+    // Display the numbers
     document.write("Numbers: " + num1 + " and " + num2);
     document.write("<br>");
-    
-  // Display 
-    document.write("Sum: " + sum);
-    document.write("<br>");
-  //
-    document.write("Difference: " + dif);
-    document.write("<br>");
-  //
-    document.write("Quotient: " + quo);
+    // Display the sum and other operations
+    document.write("Sum: " + sum + "<br>" + "Difference: " + dif + "<br>" + "Product: " + pro);
     document.write("<br>");
     
   // Step 4: Display results using innerHTML
@@ -34,12 +27,12 @@
   // Display the sum
     document.getElementById("result").innerHTML =
    "Sum: " + sum + "<br>";
-  // Display 
+  // Display difference
     document.getElementById("result").innerHTML =
    "Difference: " + dif + "<br>";
-  // Display
+  // Display product
     document.getElementById("result").innerHTML =
-   "Quotient: " + quo + "<br>";
+   "Product: " + pro + "<br>";
 </script>
 </body>
 </html>
