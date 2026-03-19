@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        alert("1a");
+
+        let grade = prompt("Input your grade (A/B/C/D/F):");
+        grade = grade.toUpperCase();
+
+        switch (grade) {
+            case "A":
+            case "B":
+                alert("Excellent");
+                break;
+
+            case "C":
+                alert("You passed");
+                break;
+
+            case "D":
+                alert("Needs improvement");
+                break;
+
+            case "F":
+                alert("You failed");
+                break;
+
+            default:
+                alert("INVALID GRADE");
+        }
+
+        alert("1b");
+
+        grade = prompt("Input your grade (A/B/C/D/F):");
+        grade = grade.toUpperCase();
+
+        if (grade == "A" || grade == "B") {
+            alert("Excellent");
+        } else if (grade == "C") {
+            alert("You passed");
+        } else if (grade == "D") {
+            alert("Needs improvement");
+        } else if (grade == "F") {
+            alert("You failed");
+        } else {
+            alert("INVALID GRADE");
+        }
+
+        alert("2");
+        // 1.
+        isWearingId = prompt("Are you wearing your school ID? (yes/no)");
+
+        switch(isWearingId.toLowerCase()) {
+            case "yes":
+                alert("Welcome to the event!");
+                break;
+            default:
+                alert("Please show your ID.");
+        }
+
+        // 2. 
+        isStudent = prompt("Are you a student? (yes/no)").toLowerCase();
+        isSeniorCitizen = prompt("Are you a senior citizen? (yes/no)").toLowerCase();
+
+        switch(isStudent) {
+            case "yes":
+                alert("You get a discounted fare.");
+                break;
+            default:
+                switch(isSeniorCitizen) {
+                    case "yes":
+                        alert("You get a discounted fare.");
+                        break;
+                    default:
+                        alert("You will pay the regular fare.");
+
+                }
+
+        }
+
+        
+
+        // 3. too tedious to implement, switch does not allow comparisons for conditions
+
+        // 4. already in switch?
+
+        // 5. 
+
+        var name = prompt("Input your full name.");
+        name = name.toLowerCase()
+        let j = 0
+
+
+        for (let i = 0; i < name.length; i++) {
+            switch(name[i]) {
+                case "a":
+                case "e":
+                case "i":
+                case "o":
+                case "u":
+                    j++;
+            }
+        }
+        alert("Your name contains " + j + " vowels.");
+
+        // 6. switch does not allow comparisons of value
+
+        // 7. comparison of values not allowed in switch
+
+    </script>
+</body>
+</html>
