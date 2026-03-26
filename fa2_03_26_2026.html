@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Appointment Booking Form</h2>
+
+    <form onsubmit="printSummary(); return false;">
+        <!-- Patient Name and ID Number -->
+        <label for="pname">Patient Name:</label>
+        <input type="text" id="pname" name="pname"><br>
+        <label for="idno">ID #:</label>
+        <input type="text" id="idno" name="idno" placeholder="NA for Regular"><br><br>
+
+        <!-- Service type and number of sessions -->
+        <label for="service">Service:</label>
+        <select name="service" id="service">
+            <option value="dental">Dental Check-up (PHP 850)</option>
+            <option value="eye">Eye Check-up (PHP 900)</option>
+            <option value="physical">Physical Exam (PHP 800)</option>
+        </select><br>
+        <label for="sessions">Sessions (Max of 3):</label>
+        <input type="number" id="sessions" name="sessions" min="1" max="3"><br><br>
+
+        <!-- Customer type -->
+        <label for="ctype">Customer Type:</label>
+        <select name="ctype" id="ctype">
+            <option value="regular">Regular</option>
+            <option value="pwd_senior">PWD/Senior</option>
+        </select><br><br>
+
+        <!-- submit button. -->
+        <input type="submit" value="Book Appointment">  
+    </form>
+
+    <!-- self explanatory, to be affected by js script -->
+    <h2>APPOINTMENT SUMMARY</h2>
+    <p id="name"></p>
+    <p id="idnumber"></p>
+    <p id="order"></p>
+    <p id="quantity"></p>
+    <p id="subtotal"></p>
+    <p id="discount"></p>
+    <p id="realtotal"></p><br>
+
+    <p id="message"></p>
+
+    <script>
+        function printSummary() {
+            // name and id number definition and display
+            var name = String(document.getElementById("pname").value);
+            document.getElementById("name").innerHTML = "Name: " + name;
+            var idnumber = String(document.getElementById("idno").value);
+            document.getElementById("idnumber").innerHTML = "ID No.: " + idnumber;
+
+            // service var definition and display, depending on user choice
+            var service = String(document.getElementById("service").value);
+            switch (service) {
+                case "dental":
+                    document.getElementById("order").innerHTML = "Order: " + "Dental Check-up (PHP 850)";
+                    break;
+                case "eye":
+                    document.getElementById("order").innerHTML = "Order: " + "Eye Check-up (PHP 900)";
+                    break;
+                case "physical":
+                    document.getElementById("order").innerHTML = "Order: " + "Physical Exam (PHP 800)";
+                    break;
+                default:
+                    document.getElementById("order").innerHTML = "Order: " + "Service not found";
+            }
+
+            // sessions and total var definition
+            var sessions = String(document.getElementById("sessions").value);
+            document.getElementById("quantity").innerHTML = "Quantity: " + sessions;
+            var total = calculateSubtotal(service, sessions);
+            document.getElementById("subtotal").innerHTML = "Subtotal: PHP " + total;
+
+            // custType var definition
+            var custType = String(document.getElementById("ctype").value);
+
+            // discount var definition and display
+            var discount = calculateDiscount(total, custType);
+            document.getElementById("discount").innerHTML = "Discount: PHP " + discount;
+
+            // realtotal var definition and display
+            var realtotal = total - discount;
+            document.getElementById("realtotal").innerHTML = "Total: PHP " + realtotal;
+
+            // display of message in p element with id "message"
+            document.getElementById("message").innerHTML = "Thank you for booking with us!";
+
+            // useful statement
+            return false;
+        }
+
+        // calculates price w/o discount
+        function calculateSubtotal(service, sessions) {
+            switch (service) {
+                case "dental":
+                    return 850 * sessions;
+                    break;
+                case "physical":
+                    return 800 * sessions;
+                    break;
+                case "eye":
+                    return 900 * sessions;
+                    break;
+                default:
+                    return null;
+            }
+        }
+
+        // calculates discount depending on user choice
+        function calculateDiscount(total, custType) {
+            switch (custType) {
+                case "pwd_senior":
+                    return total * 0.15;
+                    break;
+                default:
+                    return 0;
+            }
+        }
+
+    </script>
+</body>
+</html>
