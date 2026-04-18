@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Educated About Poverty Today!</title>
+    <link rel="stylesheet" href="koneprojstyl.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body>
+     
+    <header>
+        <section id="mainheader">
+            <a href="index.html"><img src="navbarlogo.png" alt="Website Logo" width="350px"></a>
+            <input type="text" placeholder="🔍 Search"></li>
+        </section>
+
+        <nav>
+            <div> <a href="index.html">Home Page</a> </div>
+            <div> <a href="effects-of-poverty.html">Effects of Poverty</a> </div>
+            <div> <a href="youcanhelp.html">How you can help</a> </div>
+            <div> <a href="aboutus.html">About Us</a> </div>
+        </nav>
+        
+        <a href="https://sdgs.un.org/topics/poverty-eradication"><img id="headerbanner" src="headerbanner.png" width="1500px"></a>
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Sign-up Now!</h1>
+            <p>by: M. A. Jimenez</p>
+        </section>
+
+        <section>
+
+            <form onsubmit="return validateForm();">
+                <br>
+                <label for="fullname">Full name:</label>
+                <input type="text" id="fullname" name="fullname" onblur="fullNameBlurField();"><br>
+                <span name="errormsg" id="msg_A"></span><br><br>
+
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate"><br>
+                <span name="errormsg" id="msg_B"></span><br><br>
+
+                <p>Sex:</p>
+                <input type="radio" id="male" name="sex" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female">Female</label><br>
+                <span name="errormsg" id="msg_One"></span><br><br>
+
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email"><br>
+                <span name="errormsg" id="msg_Two"></span><br><br>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br>
+                <span name="errormsg" id="msg_Three"></span><br><br>
+
+                <label for="pwd">Password:</label>
+                <input type="password" id="pwd" name="pwd"><br>
+                <span name="errormsg" id="msg_Four"></span><br><br>
+
+                <label for="pwdcnfrm">Confirm password:</label>
+                <input type="password" id="pwdcnfrm" name="pwdcnfrm"><br>
+                <span name="errormsg" id="msg_Five"></span><br><br>
+
+                <label for="questionOne">Are you interested in learning more about poverty?</label>
+                <select name="questionOne" id="questionOne">
+                    <option value="blank"></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="maybe">Maybe</option>
+                </select><br><br>
+                <span name="errormsg" id="msg_questionOne"></span><br><br>
+
+                <p>Select all checkboxes that apply.</p>
+                <input type="checkbox" id="ordinarycitizen" name="questionTwoOption" value="ordinarycitizen">
+                <label for="ordinarycitizen">Ordinary Citizen</label><br>
+                <input type="checkbox" id="student" name="questionTwoOption" value="student">
+                <label for="student">Student</label><br>
+                <input type="checkbox" id="teacher" name="questionTwoOption" value="teacher">
+                <label for="teacher">Teacher</label><br>
+                <input type="checkbox" id="governmentofficial" name="questionTwoOption" value="governmentofficial">
+                <label for="governmentofficial">Government Official</label><br><br>
+                <span name="errormsg" id="msg_questionTwo"></span><br><br>
+
+                <label for="questionThree">In which socio-economic classification do you belong?</label>
+                <select name="questionThree" id="questionThree">
+                    <option value="blankclass"></option>
+                    <option value="upperclass">Upper Class</option>
+                    <option value="middleclass">Middle Class</option>
+                    <option value="lowerclass">Lower Class</option>
+                </select> <br><br>
+                <span name="errormsg" id="msg_questionThree"></span><br><br>
+
+                <input type="submit" value="Join us and learn about poverty!"><br><br>
+                <span name="errormsg" id="msg_Success"></span><br><br>
+
+                <p>To go to the Home Page, click <a href="index.html"> this</a>.</p><br><br>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <section id="sharebuttons">
+            <div class="facebook"></div>
+            <div class="instagram"></div>
+            <div class="twitter"></div>
+            <div class="reddit"></div>
+        </section>
+
+        <section id="contactinfo">
+        <p> Contact Information: <br> 
+            XXX-XXXX-XXX <br> 
+            sampleaddress@sample.com</p>
+        </section>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
