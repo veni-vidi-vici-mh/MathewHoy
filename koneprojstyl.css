@@ -256,4 +256,17 @@
         margin-right: 70px;
     }
 
+	/* form in section is centered */ 
+	section form {
+        text-align: center;
+        margin: auto;
+    }
+
+    /* red color for text in span */
+	form span {
+        color: red;
+    }
+
+
+
 
