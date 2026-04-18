@@ -1,5 +1,5 @@
 function validateForm() {
-    //
+    //--
     document.getElementById("msg_A").innerHTML = "";
     document.getElementById("msg_B").innerHTML = "";
     document.getElementById("msg_One").innerHTML = "";
