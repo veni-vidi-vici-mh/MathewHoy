@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pre-Order Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, select {
+      width: 95%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+
+    #terms {
+      width: 10%;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+      min-height: 18px;
+    }
+  </style>
+</head>
+
+<body onload="loadSummary();">
+
+<div class="container">
+<h2>Science Project Pre-Order:</h2>
+<h2>KamoTech T.O.P.S</h2>
+<p>This project serves as a two-in-one tool that measures liquid pH and detects food spoilage in high-protein perishables derived from kamote tops. The product will change color depending on the acidity or alkalinity of a substance. The product will also serve as an indicator of food spoilage, as the growth of microorganisms in food alters its acidity or alkalinity. By monitoring these changes using our product, it can detect early signs of contamination even before the food emits an odor or looks spoiled. The project ultimately aims to create a low-cost, eco-friendly, and easy-to-use pH indicator and food spoilage detection system.</p>
+
+  <h2>Summary</h2>
+  <p id="name"></p>
+  <p id="variant"></p>
+  <p id="quantity"></p>
+  <p id="totalAmount"></p>
+  <p id="pickup"></p>
+  <p id="address"></p>
+  <p>Thank you for supporting us!</p>
+  
+</div>
+
+<script>
+
+  function getCookie(name) {
+    let keyEq = name + "=";
+            let cookies = document.cookie.split(";");
+
+            for (let i = 0; i < cookies.length; i++) {
+                let c = cookies[i];
+
+                // remove leading space
+                if (c.charAt(0) == " ") {
+                    c = c.substring(1);
+                }
+
+                // match key
+                if (c.indexOf(keyEq) == 0) {
+                    return c.substring(keyEq.length);
+                }
+            }
+
+            return null;
+  }
+
+  // LOAD SUMMARY
+  function loadSummary() {
+
+    // TODO: Retrieve stored data
+    let name = getCookie("name");
+    let variant = localStorage.getItem("variant");
+    let quantity = parseInt(localStorage.getItem("quantity"));
+    let pickup = localStorage.getItem("pickup");
+    let address = localStorage.getItem("address");
+
+      document.getElementById("name").innerHTML = "Name: " + name;
+      if (variant == "value1") {
+        document.getElementById("variant").innerHTML = "Product: " + " 50 pcs for PhP 85 ";
+        document.getElementById("totalAmount").innerHTML = "Total Amount: PhP " + quantity * 85;
+      } else if (variant == "value2") {
+        document.getElementById("variant").innerHTML = "Product: " + " 80 pcs for PhP 136 ";
+        document.getElementById("totalAmount").innerHTML = "Total Amount: PhP " + quantity * 136;
+      }
+      document.getElementById("quantity").innerHTML = "Quantity: " + quantity;
+      document.getElementById("pickup").innerHTML = "Pickup Method: " + pickup;
+      document.getElementById("address").innerHTML = "Address: " + address;
+  }
+
+</script>
+
+</body>
+</html>

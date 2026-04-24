@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pre-Order Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, select {
+      width: 95%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+
+    #terms {
+      width: 10%;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+      min-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Science Project Pre-Order:</h2>
+  <h2>KamoTech T.O.P.S</h2>
+  <p>This project serves as a two-in-one tool that measures liquid pH and detects food spoilage in high-protein perishables derived from kamote tops. The product will change color depending on the acidity or alkalinity of a substance. The product will also serve as an indicator of food spoilage, as the growth of microorganisms in food alters its acidity or alkalinity. By monitoring these changes using our product, it can detect early signs of contamination even before the food emits an odor or looks spoiled. The project ultimately aims to create a low-cost, eco-friendly, and easy-to-use pH indicator and food spoilage detection system.</p>
+
+  <!-- Error Message Area -->
+  <div id="errorMsg" class="error"></div>
+
+  <form onsubmit="return handleOrder();">
+    
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Product:</label>
+    <select id="variant">
+      <option value="">Select</option>
+      <option value="value1">50 pcs for PhP 85</option>
+      <option value="value2">80 pcs for PhP 136</option>
+    </select>
+
+    <label>Quantity:</label>
+    <input type="number" id="quantity">
+
+    <label>Pickup Method:</label>
+    <select id="pickup">
+      <option value="">Select</option>
+      <option value="Delivery">Delivery</option>
+      <option value="Meetup">Meetup</option>
+    </select>
+
+    <label>Address (for delivery only):</label>
+    <input type="text" id="address">
+
+    <label>
+      <input type="checkbox" id="terms"> I accept terms
+    </label>
+    <br><br>
+
+    <button type="button" onclick="loadPreviousOrder()">Load Previous Order</button>
+    <button type="submit">Submit</button>
+
+  </form>
+</div>
+
+<script>
+
+  // COOKIE FUNCTIONS
+  function setCookie(name, value, maxAge) {
+    let cookieOrder = name + "=" + value + ";" + " max-age=" + maxAge + ";" + " path=/";
+
+      document.cookie = cookieOrder;
+  }
+
+  function getCookie(name) {
+    let keyEq = name + "=";
+            let cookies = document.cookie.split(";");
+
+            for (let i = 0; i < cookies.length; i++) {
+                let c = cookies[i];
+
+                // remove leading space
+                if (c.charAt(0) == " ") {
+                    c = c.substring(1);
+                }
+
+                // match key
+                if (c.indexOf(keyEq) == 0) {
+                    // return the substring/part of the string
+                    // after the equal sign, e.g. Juan in username=Juan
+                    return c.substring(keyEq.length);
+                }
+            }
+
+            return null;
+  }
+
+
+  // MAIN SUBMIT HANDLER
+  function handleOrder() {
+    document.getElementById("errorMsg").innerHTML = "";
+    let isValid = true;
+
+    // TODO: Get values
+    // TODO: Validation
+    let value = document.getElementById("name").value;
+    let variant = document.getElementById("variant").value;
+    let quantity = document.getElementById("quantity").value;
+    let pickup = document.getElementById("pickup").value;
+    let address = document.getElementById("address").value;
+    let isTermsChecked = document.getElementById("terms").checked;
+
+    if (value == "") {
+        document.getElementById("errorMsg").innerHTML = " Must be not be blank. ";
+        isValid = false;
+    } else if (variant == "") {
+        document.getElementById("errorMsg").innerHTML = " Must not be blank. ";
+        isValid = false;
+    } else if (quantity == "") {
+        document.getElementById("errorMsg").innerHTML = " Must not be blank. ";
+        isValid = false;
+    } else if (pickup == "") {
+        document.getElementById("errorMsg").innerHTML = " Must not be blank. ";
+        isValid = false;
+    }
+    
+    if (quantity <= 0) {
+      document.getElementById("errorMsg").innerHTML = " Quantity must be greater than 0.";
+      isValid = false;
+    }
+    
+    if (!isTermsChecked) {
+      document.getElementById("errorMsg").innerHTML = " Terms checkbox must be checked. ";
+      isValid = false;
+
+    } if (pickup == "Delivery" && address == "") {
+      document.getElementById("errorMsg").innerHTML = " Address required for delivery. ";
+      isValid = false;
+    }
+
+
+    // If invalid: Display appropriate error message
+    // return false;
+    if(!isValid) {
+      return false;
+    // Otherwise: Store data (cookies + localStorage)
+    } else {
+      setCookie("name", value, 85000);
+      localStorage.setItem('variant', variant);
+      localStorage.setItem('quantity', quantity);
+      localStorage.setItem('pickup', pickup);
+      localStorage.setItem('address', address);
+
+      window.location.href = "summary.html";
+
+      return false;
+    }
+  }
+
+  // LOAD PREVIOUS ORDER
+  function loadPreviousOrder() {
+
+    // TODO: Retrieve stored data
+    let name = getCookie("name");
+    let variant = localStorage.getItem('variant');
+    let quantity = localStorage.getItem('quantity');
+    let pickup = localStorage.getItem('pickup');
+    let address = localStorage.getItem('address');
+
+    // TODO: If no data: Display error message "No previous order data"
+    // TODO: Otherwise: Populate fields
+    if (name == "" || variant == null) {
+      document.getElementById("errorMsg").innerHTML = " No previous order data. ";
+
+    } else {
+      document.getElementById("name").value = name;
+      document.getElementById("variant").value = variant;
+      document.getElementById("quantity").value = quantity;
+      document.getElementById("pickup").value = pickup;
+      document.getElementById("address").value = address;
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
